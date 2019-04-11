@@ -22,3 +22,6 @@ Build da aplicação
 ``
 yarn run build
 ``
+
+No Heroku, em **settings/Buildpacks** utiliza-se
+**mars/create-react-app**, responsável pelo build do front

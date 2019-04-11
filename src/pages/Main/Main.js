@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import api from '../../services/api';
 import css from './Main.module.scss';
 
@@ -64,3 +65,9 @@ export default class Main extends Component {
     );
   }
 }
+
+Main.propTypes = {
+  history: PropTypes.object.isRequired
+};
+
+Main.defaultProps = {};

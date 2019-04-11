@@ -43,7 +43,7 @@ class Box extends Component {
     io.emit('connectRoom', id);
     io.on('file', data => {
       this.setState({
-        box: { ...this.state.box, files: [data, ...this.state.box.files] }
+        box: { ...this.state.box, files: [data, ...this.state.box.files] } // eslint-disable-line
       });
     });
   };
@@ -76,7 +76,7 @@ class Box extends Component {
 
         <DropZone onDropAccepted={this.handleUpload}>
           {({ getRootProps, getInputProps }) => (
-            <div className={css['box__upload']} {...getRootProps()}>
+            <div className={css.box__upload} {...getRootProps()}>
               <input {...getInputProps()} />
               <p>
                 {!loading
@@ -120,6 +120,8 @@ class Box extends Component {
   }
 }
 
-Box.propTypes = {};
+Box.propTypes = {
+  match: PropTypes.object.isRequired
+};
 
 export default Box;
